@@ -1,1 +1,112 @@
-
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AdhiraVerse Bharat Atlas — भारताचा इतिहास, राज्ये, जिल्हे, गावे आणि सांस्कृतिक वारसा यांचा डिजिटल नकाशा.">
+<meta name="theme-color" content="#101f35">
+<title>AdhiraVerse Bharat Atlas | भारताचा डिजिटल वारसा नकाशा</title>
+<style>
+:root{--navy:#101f35;--navy2:#1a3452;--gold:#d8ad63;--paper:#f4f1e9;--ink:#17263a;--muted:#667487;--line:#e3e0d8;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans Devanagari",sans-serif}
+a{color:inherit;text-decoration:none}.topline{height:5px;background:linear-gradient(90deg,#e4b86d,#f2dfb7,#b27b37)}
+header{background:radial-gradient(ellipse at 82% 20%,#315579 0,transparent 38%),linear-gradient(125deg,#0c1a2e,#1b3655);color:white;overflow:hidden}
+.nav{max-width:1180px;margin:auto;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em;font-size:13px}.brand-mark{width:38px;height:38px;border:1px solid #d8ad63;border-radius:50%;display:grid;place-items:center;color:#f0d39f;font-size:20px}
+.nav small{color:#c7d1dd;font-size:12px}
+.hero{max-width:1180px;margin:auto;padding:60px 22px 76px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.eyebrow{color:#e4c48e;font-size:12px;letter-spacing:.16em;font-weight:800;text-transform:uppercase}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.13;letter-spacing:-.03em;margin:15px 0 16px}
+.hero p{color:#d5deea;font-size:17px;line-height:1.8;max-width:650px;margin:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:9px;font-size:14px;font-weight:800;transition:.2s}
+.btn-gold{background:var(--gold);color:#17263a}.btn-outline{border:1px solid #8294a8;color:white}.btn:hover{transform:translateY(-2px)}
+.map-art{min-height:290px;position:relative;display:grid;place-items:center}
+.map-orbit{width:min(100%,340px);aspect-ratio:1;border:1px solid #ffffff35;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#d8ad6315,transparent 65%)}
+.map-orbit:before,.map-orbit:after{content:"";position:absolute;border:1px solid #ffffff24;border-radius:50%;inset:11%}
+.map-orbit:after{inset:23%}
+.india-shape{font-size:clamp(130px,20vw,205px);color:#e4c48e;text-shadow:0 12px 45px #0008;line-height:1;z-index:1}
+.orbit-label{position:absolute;background:#233f5e;border:1px solid #ffffff35;color:#f2dfbd;padding:8px 11px;border-radius:30px;font-size:11px;z-index:2}
+.orbit-label.one{top:13%;right:0}.orbit-label.two{bottom:16%;left:-3%}.orbit-label.three{bottom:4%;right:12%}
+main{max-width:1180px;margin:auto;padding:50px 22px 70px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:22px}
+.kicker{color:#9b7137;font-weight:800;font-size:11px;letter-spacing:.15em}
+h2{font-size:clamp(25px,3vw,34px);margin:8px 0 0;color:#17263a}
+.section-head p{max-width:420px;color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 28px #1b2d3e0a;display:flex;flex-direction:column;min-width:0}
+.card-visual{height:190px;position:relative;overflow:hidden;background:linear-gradient(135deg,#183653,#315b71);display:grid;place-items:center;color:#f0d6a8}
+.card-visual.belgaum{background:linear-gradient(135deg,#26483f,#64816a)}
+.visual-ring{position:absolute;width:220px;height:220px;border:1px solid #ffffff35;border-radius:50%}
+.visual-ring:before,.visual-ring:after{content:"";position:absolute;border:1px solid #ffffff30;border-radius:50%;inset:20px}.visual-ring:after{inset:48px}
+.visual-symbol{font-size:78px;z-index:1;text-shadow:0 8px 25px #0005}
+.visual-tag{position:absolute;left:17px;top:16px;border:1px solid #ffffff50;background:#0c1b2c55;padding:7px 10px;border-radius:30px;font-size:10px;letter-spacing:.1em;font-weight:800}
+.card-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:22px;margin:0 0 9px}.card-body p{color:var(--muted);font-size:14px;line-height:1.75;margin:0 0 18px}
+.card-link{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:15px;border-top:1px solid var(--line);font-weight:800;color:#254d6b;font-size:14px}
+.card-link span:last-child{font-size:21px;color:#a67a3d}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.feature{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff9}
+.feature b{display:block;margin:8px 0 5px;font-size:14px}.feature p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+.feature-icon{font-size:22px}
+.note{margin-top:38px;padding:19px 22px;border-left:3px solid var(--gold);background:#ebe6da;color:#536174;font-size:13px;line-height:1.7;border-radius:0 10px 10px 0}
+footer{background:#101f35;color:#c7d1dd;text-align:center;padding:25px 15px;font-size:12px;line-height:1.8}
+footer strong{color:#f0d6a8}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:44px;padding-bottom:42px}.map-art{min-height:220px}.map-orbit{width:230px}.india-shape{font-size:145px}.section-head{display:block}.section-head p{margin-top:10px}.cards{grid-template-columns:1fr}.card-visual{height:165px}.features{grid-template-columns:1fr}.nav{padding:15px}.nav small{display:none}main{padding:38px 15px 50px}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <nav class="nav">
+    <a class="brand" href="./"><span class="brand-mark">अ</span><span>ADHIRAVERSE<br><small> DIGITAL HERITAGE ATLAS</small></span></a>
+    <small>इतिहास • भूगोल • संस्कृती • वारसा</small>
+  </nav>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">भारताचा डिजिटल वारसा प्रकल्प</div>
+      <h1>भारताचा इतिहास<br>नकाशावरून जाणून घ्या.</h1>
+      <p>भारताच्या प्रदेशांचा, जिल्ह्यांचा, गावांचा आणि ऐतिहासिक वारशाचा डिजिटल प्रवास — नकाशे व माहिती एका ठिकाणी.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="bharat/index.html">भारत ॲटलस उघडा <span>↗</span></a>
+        <a class="btn btn-outline" href="#explore">ॲटलस एक्सप्लोर करा ↓</a>
+      </div>
+    </div>
+    <div class="map-art" aria-hidden="true">
+      <div class="map-orbit"><div class="india-shape">♧</div><span class="orbit-label one">भारताचा इतिहास</span><span class="orbit-label two">राज्ये आणि जिल्हे</span><span class="orbit-label three">स्थानिक वारसा</span></div>
+    </div>
+  </section>
+</header>
+<main id="explore">
+  <div class="section-head">
+    <div><div class="kicker">EXPLORE THE ATLAS</div><h2>आपला ॲटलस निवडा</h2></div>
+    <p>प्रत्येक नकाशा स्वतंत्र पेजवर उघडेल. सध्याचे नकाशे आणि त्यातील माहिती स्वतंत्रपणे जतन केली आहे.</p>
+  </div>
+  <section class="cards">
+    <article class="card">
+      <div class="card-visual"><span class="visual-tag">INDIA • HISTORY MAP</span><span class="visual-ring"></span><span class="visual-symbol">🇮🇳</span></div>
+      <div class="card-body">
+        <h3>भारत इतिहास ॲटलस</h3>
+        <p>भारताचा राज्य व जिल्हानिहाय नकाशा आणि ऐतिहासिक कालखंडांचा डिजिटल अभ्यास.</p>
+        <a class="card-link" href="bharat/index.html"><span>भारताचा नकाशा पाहा</span><span>→</span></a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-visual belgaum"><span class="visual-tag">BELGAUM • DISTRICT MAP</span><span class="visual-ring"></span><span class="visual-symbol">📍</span></div>
+      <div class="card-body">
+        <h3>बेळगाव जिल्हा ॲटलस</h3>
+        <p>बेळगाव जिल्ह्यातील 1,312 गावांचा नकाशा, शोध सुविधा आणि उपलब्ध गावनिहाय माहिती.</p>
+        <a class="card-link" href="belgaum/index.html"><span>बेळगावचा नकाशा पाहा</span><span>→</span></a>
+      </div>
+    </article>
+  </section>
+  <section class="features" aria-label="ॲटलसची वैशिष्ट्ये">
+    <div class="feature"><div class="feature-icon">🗺️</div><b>नकाशाधारित माहिती</b><p>प्रदेश आणि ठिकाणे नकाशावरून शोधण्याचा अनुभव.</p></div>
+    <div class="feature"><div class="feature-icon">⌕</div><b>शोध सुविधा</b><p>उपलब्ध नकाशांमधील ठिकाणे आणि गावांचा शोध.</p></div>
+    <div class="feature"><div class="feature-icon">🏛️</div><b>इतिहास व वारसा</b><p>भारताच्या इतिहास आणि स्थानिक सांस्कृतिक वारशाचा डिजिटल संग्रह.</p></div>
+  </section>
+  <div class="note">टीप: हा ॲटलस टप्प्याटप्प्याने विकसित होत आहे. नवीन राज्ये, जिल्हे आणि ऐतिहासिक माहिती पुढील टप्प्यांत जोडली जाईल.</div>
+</main>
+<footer><strong>ADHIRAVERSE BHARAT ATLAS</strong><br>भारताचा डिजिटल इतिहास, भूगोल आणि सांस्कृतिक वारसा<br>© AdhiraVerse</footer>
+</body>
+</html>
