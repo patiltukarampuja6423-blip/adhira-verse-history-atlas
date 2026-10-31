@@ -1,7 +1,14 @@
-AdhiraVerse Combined Atlas v5
-- index.html: भारत आणि बेळगाव ॲटलस एकत्र.
-- भारत SVG नकाशासाठी touch-action, wheel आणि मूळ zoom buttons कायम.
-- बेळगाव Leaflet नकाशासाठी dragging, touch pinch zoom, wheel zoom, double-click zoom स्पष्टपणे enabled.
-- टॅब बदलल्यानंतर Leaflet invalidateSize पुन्हा चालवले जाते.
-- मूळ HTML फाइल्स source-originals मध्ये बॅकअप म्हणून आहेत.
-GitHub Pages साठी index.html repository root मध्ये ठेवा.
+ADHIRAVERSE BHARAT ATLAS — नवीन होमपेज पॅकेज
+
+फोल्डर रचना:
+- index.html : नवीन आकर्षक मुख्यपृष्ठ
+- bharat/index.html : आधीचा भारत इतिहास ॲटलस (जतन केलेला)
+- belgaum/index.html : आधीचा बेळगाव जिल्हा ॲटलस (जतन केलेला)
+
+महत्त्वाचे:
+1. भारत आणि बेळगावचे नकाशे स्वतंत्र पेजवर ठेवले आहेत.
+2. मूळ नकाशांच्या HTML फाइल्समध्ये बदल केलेला नाही.
+3. मुख्यपृष्ठावरील कार्डवर क्लिक केल्यास संबंधित नकाशा उघडतो.
+4. GitHub Pages साठी या पॅकेजमधील सर्व फाइल्स repository च्या root मध्ये अपलोड करा.
+5. अपलोड करण्यापूर्वी सध्याच्या repository चा backup घ्या.
+6. ही फाइल रचना तयार केली आहे; प्रत्यक्ष GitHub वर अपलोड/Live publish केलेले नाही.
